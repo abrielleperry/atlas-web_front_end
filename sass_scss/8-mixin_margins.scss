@@ -1,2 +1,11 @@
 /* Margin left and right at 10px to body
 Margin left and right at 15px to div */
+body {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div {
+  margin-left: 15px;
+  margin-right: 15px;
+}
