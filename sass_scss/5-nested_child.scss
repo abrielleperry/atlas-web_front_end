@@ -1,7 +1,8 @@
+/* Text color #3D3D3D in body, Text color #FF0000 to .red 1st children of body */
 body {
   color: #3D3D3D;
 
-  .red {
+  >.red {
     color: #FF0000;
   }
 }
