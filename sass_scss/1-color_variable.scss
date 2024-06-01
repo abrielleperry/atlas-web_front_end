@@ -1,7 +1,10 @@
 /* assigns the text color #3D3D3D to the HTML tags body and p */
 $text-color: #3D3D3D; // define the color variable
 
-body,
+body {
+  color: $text-color; // apply color var to body 
+}
+
 p {
-  color: $text-color; // apply color var to body and p 
+  color: $text-color; // apply color var to p 
 }
