@@ -2,7 +2,8 @@
 button {
   color: #FF0000;
 
-  :hover {
+  &:hover {
+    // &:hover is a parent selector
     color: #00FF00;
   }
 }
