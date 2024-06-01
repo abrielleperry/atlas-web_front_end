@@ -6,3 +6,6 @@ Margin left and right at 15px to div */
     margin-right: $leftRight;
   }
 }
+
+@include set-margins(body, 10);
+@include set-margins(div, 15);
