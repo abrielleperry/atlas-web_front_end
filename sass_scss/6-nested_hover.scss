@@ -1,1 +1,8 @@
 /* Text color #FF0000, Color #00FF00 when hover over button */
+button {
+  color: #FF0000;
+
+  :hover {
+    color: #00FF00;
+  }
+}
