@@ -190,6 +190,7 @@
 
   
   [class*='col-'] {
+    margin: 1rem;
   }
   
   .col-1-3 {
