@@ -357,6 +357,11 @@
     padding: 10rem 4rem;
   }
   
+  .section-hero .section-category {
+    color: var(--color-white);
+    text-transform: uppercase;
+  }
+
   .hero-homepage {
     background-position: 75% 0;
     background-repeat: no-repeat;
