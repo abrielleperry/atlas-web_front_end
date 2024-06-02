@@ -352,6 +352,10 @@
     position: relative;
     margin-top: -8.5rem;
   }
+
+  .section-hero .section-body {
+    padding: 10rem 4rem;
+  }
   
   .hero-homepage {
     background-position: 75% 0;
