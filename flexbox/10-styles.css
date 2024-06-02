@@ -349,7 +349,8 @@
       ============================= */
   
   .section-hero {
-
+    position: relative;
+    margin-top: -8.5rem;
   }
   
   .hero-homepage {
