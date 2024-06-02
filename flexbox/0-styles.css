@@ -15,7 +15,7 @@
 /* Variables
    ============================= */
 
-   :root {
+  :root {
     --color-primary: #D73953;
     --color-black:  #090909;
     --color-white: #ffffff;
@@ -181,6 +181,7 @@
       ============================= */
   
   ul.row {
+    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
