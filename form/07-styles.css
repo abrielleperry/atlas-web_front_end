@@ -822,3 +822,17 @@ textarea:valid:not(:placeholder-shown) {
 
 
 /*** SEARCH FORM ***/
+
+.form-search {
+  display: block;
+  padding: .5rem 0;
+  position: relative;
+}
+
+.form-search .search-icon {
+  display: inline-block;
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
