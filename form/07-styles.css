@@ -819,3 +819,6 @@ input:required:valid:not(:placeholder-shown),
 textarea:valid:not(:placeholder-shown) {
   border: 0.1rem solid var(--valid-color);
 }
+
+
+/*** SEARCH FORM ***/
