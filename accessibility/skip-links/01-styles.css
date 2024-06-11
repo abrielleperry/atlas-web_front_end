@@ -181,10 +181,6 @@ a:active {
 /* Helpers
     ============================= */
 
-.off-screen {
-  left: -100vw;
-  position: absolute;
-}
 
 .visually-hidden:not(:focus):not(:active) {
   position: absolute !important;
