@@ -196,7 +196,7 @@ a:active {
   position: absolute;
 }
 
-.skip-line {
+.skip-link {
   background: var(--color-black);
   color: var(--color-white);
   left: 0;
