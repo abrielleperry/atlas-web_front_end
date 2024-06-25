@@ -20,7 +20,7 @@
 <body>
   <div class="container-lg p-5">
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-4 mt-3">
+      <div class="col-12 col-sm-4 mt-3">
           <div class="card">
           <div class="card-header">Coding</div>
           <img src="https://via.placeholder.com/450x200" />
@@ -33,7 +33,7 @@
           <div class="card-footer">40h</div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4 mt-3">
+      <div class="col-12 col-sm-4 mt-3">
           <div class="card">
           <div class="card-header">Coding</div>
           <img src="https://via.placeholder.com/450x200" />
@@ -46,7 +46,7 @@
           <div class="card-footer">35h</div>
         </div>
       </div>
-      <div class="col-sm-6 col-md-4 mt-3">
+      <div class="col-12 col-sm-4 mt-3">
           <div class="card">
           <div class="card-header">Coding</div>
           <img src="https://via.placeholder.com/450x200" />
@@ -63,16 +63,16 @@
   </div>
 
   <!-- Modal -->
-  <div id="playModal" tabindex="-1" role="dialog" aria-labelledby="playModal" aria-hidden="true">
+  <div id="playModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="playModal" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div>
-        <div>
-          <h5 id="exampleModalLabel">Play with CodePen</h5>
-          <button type="button" data-dismiss="modal" aria-label="Close">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Play with CodePen</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div>
+        <div class="modal-body">
           <p>
             CodePen is an online community for testing and showcasing user-created HTML, CSS and JavaScript code
             snippets.
@@ -89,24 +89,24 @@
             with an estimated 330,000 registered users and 14.16 million monthly visitors.
           </p>
 
-          <form>
+          <form class="border-top pt-3">
             <div>
               <h5>Connect</h5>
             </div>
-            <div>
-              <label for="username">Username</label>
-              <div>
-                <input type="text" id="username" />
+            <div class="form-group row">
+              <label class="col-2 col-form-label text-right" for="username">Username</label>
+              <div class="col-10">
+                <input class="form-control" type="text" id="username" />
               </div>
             </div>
-            <div>
-              <label for="password">Password</label>
-              <div>
-                <input type="password" id="password" />
+            <div class="form-group row">
+              <label class="col-2 col-form-label text-right" for="password">Password</label>
+              <div class="col-10">
+                <input class="form-control" type="password" id="password" />
               </div>
             </div>
-            <div>
-              <button type="submit">Connect</button>
+            <div class="form-group row">
+              <button class="btn btn-danger ml-auto mr-3" type="submit">Connect</button>
             </div>
           </form>
         </div>
