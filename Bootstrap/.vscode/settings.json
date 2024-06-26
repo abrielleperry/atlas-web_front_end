@@ -1,0 +1,35 @@
+{
+  "editor.fontFamily": "Monolisa",
+  "editor.fontSize": 18,
+  "editor.fontLigatures": true,
+  "editor.codeLensFontFamily": "",
+  "editor.fontWeight": "normal",
+  "editor.fontVariations": true,
+  "workbench.colorCustomizations": {},
+  "material-icon-theme.files.customClones": [],
+  "workbench.colorTheme": "Warm Black",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": false,
+  "editor.language.colorizedBracketPairs": [],
+  "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    }
+  },
+}
