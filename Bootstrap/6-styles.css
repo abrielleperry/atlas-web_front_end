@@ -8,3 +8,9 @@
 .btn-primary:active {
   background-color: #BC1340;
 }
+
+
+.btn-outline-primary {
+  color: #E0003C;
+  border: 1px solid #E0003C;
+}
