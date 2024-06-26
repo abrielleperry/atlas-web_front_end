@@ -12,5 +12,10 @@
 
 .btn-outline-primary {
   color: #E0003C;
-  border: 1px solid #E0003C;
+  border: #E0003C;
+}
+
+a {
+  color: #E0003C;
+  border: 1rem #E0003C;
 }
