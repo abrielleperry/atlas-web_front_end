@@ -1,5 +1,7 @@
 function createClassroom(numbersOfStudents) {
-  function studentSeat() {
-
+  function studentSeat(seat) {
+    return function () {
+      return seat;
+    };
   }
 }
