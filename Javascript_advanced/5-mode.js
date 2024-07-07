@@ -1,3 +1,4 @@
-function changeMode {
+function changeMode(size, weight, transform, background, color) {
+
 
 }
