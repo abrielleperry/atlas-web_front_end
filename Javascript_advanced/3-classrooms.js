@@ -4,4 +4,6 @@ function createClassRoom(numbersOfStudents) {
       return seat;
     };
   }
+  let students = [];
+
 }
