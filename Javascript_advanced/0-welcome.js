@@ -1,3 +1,3 @@
-function welcome {
+function welcome(firstName, lastName) {
 
 }
