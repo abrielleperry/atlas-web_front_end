@@ -8,4 +8,6 @@ function createClassRoom(numbersOfStudents) {
   for (let i = 0; i < numbersOfStudents; i++) {
     students.push(studentSeat(i + 1));
   }
+  return students;
 }
+let classRoom = createClassRoom(10);
