@@ -3,3 +3,7 @@ function divideBy(firstNumber) {
     return firstNumber / secondNumber
   };
 }
+
+function addBy(firstNumber) {
+
+}
