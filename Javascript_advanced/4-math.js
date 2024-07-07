@@ -1,3 +1,3 @@
-function divideBy() {
+function divideBy(firstNumber) {
 
 }
