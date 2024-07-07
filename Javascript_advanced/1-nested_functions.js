@@ -7,6 +7,7 @@ function outer() {
 
   function inner() {
     alert(globalVariable + " " + course);
+    var exclamation = "!";
 
   }
 }
