@@ -5,5 +5,7 @@ function divideBy(firstNumber) {
 }
 
 function addBy(firstNumber) {
-
+  return function (secondNumber) {
+    return firstNumber + secondNumber
+  };
 }
