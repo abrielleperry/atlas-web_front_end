@@ -1,2 +1,2 @@
-function createClassroom() {
+function createClassroom(numbersOfStudents) {
 }
