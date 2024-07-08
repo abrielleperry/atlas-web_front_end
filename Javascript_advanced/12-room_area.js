@@ -7,4 +7,4 @@ const roomDimensions = {
 };
 
 const boundGetArea = roomDimensions.getArea.bind(roomDimensions);
-console.log(boundGetArea());
+console.log(boundGetArea()); // return surface area of roomDimensions obj
