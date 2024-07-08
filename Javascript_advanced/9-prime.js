@@ -1,5 +1,3 @@
-const { is } = require("@babel/types");
-
 function countPrimeNumbers() {
   let count = 0;
   for (let i = 2; i < 100; i++) { // starts at 2 loop through 100 
@@ -24,4 +22,4 @@ const start = performance.now(); // start time
 const count = countPrimeNumbers(); // calls function stores val in count
 const end = performance.now(); // time after func call has ended
 
-console.log(`Execution time of printing countPrimeNumbers was ${end - start} milliseconds`); // prints time taken to run function
+console.log(`Execution time of printing countPrimeNumbers was ${end - start} milliseconds`);
