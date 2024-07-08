@@ -38,8 +38,8 @@
       }
 
       function replaceFamilyTree() {
-        $("tbody").empty().append(
-          $("<tr>").append(
+        $("tbody").empty().append( // Empties any existing table body content and then 
+          $("<tr>").append( // adds a single row with the names "Gerard" and "Bonissa".
             $("<td>").text("Gerard"),
             $("<td>").text("Bonissa")
           )
