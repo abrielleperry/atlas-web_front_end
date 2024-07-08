@@ -19,3 +19,7 @@ function isPrime(num) { // is given number prime
   return true; // prime
 
 }
+
+const start = performance.now();
+const count = countPrimeNumbers();
+const end = performance.now();
