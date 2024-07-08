@@ -1,5 +1,3 @@
-const { conditionalExpression } = require("@babel/types")
-
 const user = {
   hobby: "Calligraphy",
   favoriteSport: "Hockey",
@@ -15,3 +13,4 @@ function logWelcomeUser(welcomeString) {
 }
 
 const bindLogWelcomeUser = logWelcomeUser.bind(user)
+bindLogWelcomeUser("Hello")
