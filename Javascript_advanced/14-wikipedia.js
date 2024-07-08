@@ -3,3 +3,6 @@ function createElement(data) {
   para.textContent = data;
   document.body.appendChild(para);
 }
+
+function queryWikipedia(callback) {
+}
