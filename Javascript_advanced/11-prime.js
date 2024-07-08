@@ -20,7 +20,7 @@ function isPrime(num) { // is given number prime
 
 const start = performance.now(); // start time
 for (let i = 0; i < 100; i++) { // loop 100 times
-  setTimeout(countPrimeNumbers, 0); // simulate async
+  setTimeout(countPrimeNumbers, 0); // simulate async and set timeout to 0
 }
 const end = performance.now(); // time after func call has ended
 
