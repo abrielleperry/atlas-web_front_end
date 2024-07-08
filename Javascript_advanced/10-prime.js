@@ -19,7 +19,10 @@ function isPrime(num) { // is given number prime
 }
 
 const start = performance.now(); // start time
+for (let i = 0; i < 100; i++) { // loop 100 times
+  countPrimeNumbers();
+}
 const count = countPrimeNumbers(); // calls function stores val in count
 const end = performance.now(); // time after func call has ended
 
-console.log(`Execution time of printing countPrimeNumbers was ${end - start} milliseconds`);
+console.log(`Execution time of calculating prime numbers 100 times was ${end - start} milliseconds`);
