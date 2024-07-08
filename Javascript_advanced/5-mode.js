@@ -13,6 +13,7 @@ function main() {
   var darkMode = changeMode(12, 'bold', 'capitalize', 'black', 'white');
   var screamMode = changeMode(12, 'normal', 'lowercase', 'white', 'black');
 
+  // add paragraph
   var p = document.createElement('p');
   p.textContent = 'Welcome Holberton!';
   document.body.appendChild(p);
