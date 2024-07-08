@@ -11,16 +11,16 @@ class studentHogwarts {
       name = newName;
     };
 
-    this.rewardStudent = () => {
+    this.rewardStudent = () => { // add point
       changeScoreBy(1);
     };
 
-    this.penalizeStudent = () => {
+    this.penalizeStudent = () => { // deduct point
       changeScoreBy(-1);
     };
 
     this.getScore = () => {
-      return `${name}: ${privateScore}`;
+      return `${name}: ${privateScore}`; // return name and score
     };
   }
 }
