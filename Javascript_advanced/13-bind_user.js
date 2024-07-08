@@ -12,5 +12,5 @@ function logWelcomeUser(welcomeString) {
   console.log(`${welcomeString}, ${this.firstName}. Your occupation is: ${this.occupation}`)
 }
 
-const bindLogWelcomeUser = logWelcomeUser.bind(user)
-bindLogWelcomeUser("Hello")
+const bindLogWelcomeUser = logWelcomeUser.bind(user) // bind user obj to logWelcomeUser func
+bindLogWelcomeUser("Hello") // call func with string
