@@ -14,14 +14,19 @@
   <script type="application/javascript">
     $(document).ready(function () {
       function createFamilyTree() {
+        const table = $('<table>').appendTo('body');
+        $("<thead>").append(
+          $("<tr>").append(
+            $("<th>").text("Firstname"),
+            $("<th>").text("Lastname"),
 
+          )
+        ).appendTo(table);
+        $("<tbody>").appendTo(table);
+      }
 
-        function replaceFamilyTree() {
+      function addNewMember(firstName, lastName) {
 
-
-          createFamilyTree();
-          replaceFamilyTree();
-        });
   </script>
 </body>
 
