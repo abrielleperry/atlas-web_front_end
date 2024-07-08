@@ -14,40 +14,35 @@
   <script type="application/javascript">
     $(document).ready(function () {
       function createFamilyTree() {
+        const table = $("<table>").appendTo("body");
         $("<thead>").append(
           $("<tr>").append(
             $("<th>").text("Firstname"),
-            $("<th>").text("Lastname")
+            $("<th>").text("Lastname"),
+            $("<th>")
           )
-        ).appendTo("body");
-
-        $("<tbody>").append(
-          $("<tr>").append(
-            $("<td>").text("Guillaume"),
-            $("<td>").text("Salva")
-          ),
-          $("<tr>").append(
-            $("<td>").text("Paulette"),
-            $("<td>").text("Leroy")
-          ),
-          $("<tr>").append(
-            $("<td>").text("Sophie"),
-            $("<td>").text("Leroy")
-          )
-        ).appendTo("body");
+        ).appendTo(table);
+        $("<tbody>").appendTo(table);
       }
 
-      function replaceFamilyTree() {
-        $("tbody").empty().append( // empty table body content
-          $("<tr>").append( // adds a single row with the names 
-            $("<td>").text("Gerard"),
-            $("<td>").text("Bonissa")
-          )
+      function addNewMember(firstName, lastName) {
+        const tbody = $("tbody");
+        const row = $("<tr>").append(
+          $("<td>").text(firstName),
+          $("<td>").text(lastName),
+          $("<td>").text("(x)").addClass("remove-cell").click(function () {
+            $(this).parent().remove();
+          })
         );
+        tbody.append(row);
       }
 
       createFamilyTree();
-      replaceFamilyTree();
+      addNewMember("Guillaume", "Salva");
+      addNewMember("Arielle", "Snizt");
+      addNewMember("Fanette", "Snizt");
+      addNewMember("Gerard", "Snizt");
+      addNewMember("Victor", "Salva");
     });
   </script>
 </body>
