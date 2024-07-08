@@ -1,3 +1,5 @@
+const { conditionalExpression } = require("@babel/types")
+
 const user = {
   hobby: "Calligraphy",
   favoriteSport: "Hockey",
@@ -9,5 +11,7 @@ const user = {
 }
 
 function logWelcomeUser(welcomeString) {
-
+  console.log(`${welcomeString}, ${this.firstName}. Your occupation is: ${this.occupation}.`)
 }
+
+const bindLogWelcomeUser = logWelcomeUser.bind(user)
