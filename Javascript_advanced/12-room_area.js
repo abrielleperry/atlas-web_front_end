@@ -6,4 +6,4 @@ const roomDimensions = {
   }
 };
 
-const boundGetArea = roomDimensions.getArea 
+const boundGetArea = roomDimensions.getArea.bind(roomDimensions);
