@@ -18,5 +18,10 @@ function main() {
   p.textContent = 'Welcome Holberton!';
   document.body.appendChild(p);
 
+  var spookyBtn = document.createElement('button');
+  spookyBtn.textContent = 'Spooky';
+  spookyBtn.onclick = spooky;
+  document.body.appendChild(spookyBtn);
+
 }
 main();
