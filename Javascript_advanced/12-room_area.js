@@ -5,3 +5,5 @@ const roomDimensions = {
     return this.width * this.length;
   }
 };
+
+const boundGetArea = roomDimensions.getArea 
