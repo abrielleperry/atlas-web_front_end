@@ -14,12 +14,12 @@
   <script type="application/javascript">
     $(document).ready(function () {
       function createFamilyTree() {
-        var header = "<tr><th>First Name</th><th>Last Name</th></tr>";
-        var body = "<tr><td>Guillaume</td><td>Salva</td></tr>" +
-          "<tr><td>Paulette</td><td>Salva</td></tr>" +
-          "<tr><td>Antoine</td><td>Salva</td></tr>";
-        var table = $("<table>").append($("<thead>").append(header)).append($("<tbody>").append(body));
-        $("body").append(table);
+        $("<thead>").append(
+          $("<tr>").append(
+            $("<th>").text("First Name"),
+            $("<th>").text("Last Name")
+          )
+        ).appendTo("body");
       }
       createFamilyTree();
     });
