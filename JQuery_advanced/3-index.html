@@ -16,8 +16,8 @@
       function createFamilyTree() {
         $("<thead>").append(
           $("<tr>").append(
-            $("<th>").text("First Name"),
-            $("<th>").text("Last Name")
+            $("<th>").text("Firstname"),
+            $("<th>").text("Lastname")
           )
         ).appendTo("body");
 
@@ -26,7 +26,14 @@
             $("<td>").text("Guillaume"),
             $("<td>").text("Salva")
           ),
-
+          $("<tr>").append(
+            $("<td>").text("Paulette"),
+            $("<td>").text("Leroy")
+          ),
+          $("<tr>").append(
+            $("<td>").text("Sophie"),
+            $("<td>").text("Leroy")
+          )
         ).appendTo("body");
       }
       createFamilyTree();
