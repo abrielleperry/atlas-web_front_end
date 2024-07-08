@@ -23,3 +23,5 @@ function isPrime(num) { // is given number prime
 const start = performance.now(); // start time
 const count = countPrimeNumbers(); // calls function stores val in count
 const end = performance.now(); // time after func call has ended
+
+console.log(`Execution time of printing countPrimeNumbers was ${end - start} milliseconds`); // prints time taken to run function
