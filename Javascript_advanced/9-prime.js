@@ -20,6 +20,6 @@ function isPrime(num) { // is given number prime
 
 }
 
-const start = performance.now();
-const count = countPrimeNumbers();
-const end = performance.now();
+const start = performance.now(); // start time
+const count = countPrimeNumbers(); // calls function stores val in count
+const end = performance.now(); // time after func call has ended
