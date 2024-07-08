@@ -23,5 +23,15 @@ function main() {
   spookyBtn.onclick = spooky;
   document.body.appendChild(spookyBtn);
 
+
+  var darkModeBtn = document.createElement('button');
+  darkModeBtn.textContent = 'Dark mode';
+  darkModeBtn.onclick = darkMode;
+  document.body.appendChild(darkModeBtn);
+
+  var screamModeBtn = document.createElement('button');
+  screamModeBtn.textContent = 'Scream mode';
+  screamModeBtn.onclick = screamMode;
+  document.body.appendChild(screamModeBtn);
 }
 main();
