@@ -11,22 +11,32 @@
 <body>
   <script>
     $(document).ready(function () {
+
+      // creates a dynamic search form
+      // adds text input for user to search with submit button
+      // creates a ul element to hold search results
       function createSearchForm() {
         const form = $('<form></form>');
         const input = $('<input type="text">');
         const submit = $('<input type="submit" value="Search">');
         const ul = $('<ul></ul>');
 
+        // form appended to body making visible to user
         form.append(input);
         form.append(submit);
         $('body').append(form);
         $('body').append(ul);
 
+        // event listener for forms submit button
+        // prevents default form submission
+        // instead calls queryWikipedia func with value of input
         form.on('submit', function (event) {
           event.preventDefault();
           queryWikipedia(input.val());
         });
       }
+
+
     });
   </script>
 </body>
