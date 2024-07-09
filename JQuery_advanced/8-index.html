@@ -15,6 +15,7 @@
       // creates a dynamic search form
       // adds text input for user to search with submit button
       // creates a ul element to hold search results
+      // another ul for pagination control
       function createSearchForm() {
         const form = $('<form></form>');
         const input = $('<input type="text">');
@@ -80,8 +81,14 @@
             results.forEach(function (result) {
               addNewArticle(result.pageid, result.title, result.snippet);
             });
+            buildPagination(totalHits, 10, offset)
           }
         });
+      }
+
+      function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
+        const pagination = $('#pagination')
+        pagination.empty();
       }
 
       createSearchForm();
