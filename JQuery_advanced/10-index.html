@@ -11,11 +11,13 @@
 
 <body>
   <script>
-    function addPostRow(data) {
-      const paragraph = $('<p></p>')
-      const span = $('<span></span>').text(`Post created with id ${data.id}, title: ${data.title}, author: ${data.author}`);
-      $('body').append(paragraph)
-      paragraph.append(span);
+    $(document).ready(function () {
+      function addPostRow(data) {
+        const paragraph = $('<p></p>')
+        const span = $('<span></span>').text(`Post created with id ${data.id}, title: ${data.title}, author: ${data.author}`);
+        $('body').append(paragraph)
+        paragraph.append(span);
+      }
 
     }
   </script>
