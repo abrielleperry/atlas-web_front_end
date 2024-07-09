@@ -73,6 +73,13 @@
           $('<option>').val('after').text('After')
         ));
 
+        // appends a submit input button to form
+        // value is displayed on button as Add Member
+        form.append($('<input>').attr({
+          type: 'submit',
+          value: 'Add Member'
+        }));
+
 
 
         createFamilyTree();
