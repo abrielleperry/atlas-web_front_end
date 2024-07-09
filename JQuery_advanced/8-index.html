@@ -6,6 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wikipedia Search</title>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    #pagination {
+      display: flex;
+      list-style: none;
+    }
+
+    #pagination li {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+
+    #pagination li.current {
+      font-weight: bold;
+    }
+  </style>
 </head>
 
 <body>
@@ -86,9 +101,25 @@
         });
       }
 
+      // dynamically creates pagination based on num of search results and desired num of items per page
       function buildPagination(numberOfItems, itemsPerPage, currentOffset) {
         const pagination = $('#pagination')
         pagination.empty();
+        const totalPages = Math.ceil(numberOfItems / itemsPerPage)
+        for (let i = 0; i < totalPages; i++) {
+          const li = $('<li></li>').text(i + 1)
+
+          // highlights the current page num
+          if (i * itemsPerPage === currentOffset) {
+            li.addClass('current')
+          }
+
+          // click event allows user to nav pages
+          li.on('click', function () {
+            queryWikipedia($('input[type="text"]').val(), i * itemsPerPage)
+          })
+          pagination.append(li)
+        }
       }
 
       createSearchForm();
