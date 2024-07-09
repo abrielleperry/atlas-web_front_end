@@ -73,6 +73,10 @@
           dataType: 'jsonp',
           success: function (response) {
             const results = response.query.search;
+            const totalHits = response.query.searchinfo.totalhits;
+
+            $('ul').empty();
+
             results.forEach(function (result) {
               addNewArticle(result.pageid, result.title, result.snippet);
             });
