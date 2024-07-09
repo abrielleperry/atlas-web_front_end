@@ -62,10 +62,23 @@
           format: 'json'
         };
 
+        // if success, iterates over search results
+        // calls addNewArticle func to pass relevant data to be displayed
+        $.ajax({
+          url: 'https://en.wikipedia.org/w/api.php',
+          data: data,
+          dataType: 'jsonp',
+          success: function (response) {
+            const results = response.query.search;
+            results.forEach(function (result) {
+              addNewArticle(result.pageid, result.title, result.snippet);
+            });
+          }
+        });
+      }
 
-
-        createSearchForm();
-      });
+      createSearchForm();
+    });
   </script>
 </body>
 
