@@ -52,8 +52,20 @@
         $('ul').append(li);
       }
 
+      // fetch data from wikipedia
+      // makes ajax request to wikipedia api to search for users input
+      function queryWikipedia(search) {
+        const data = {
+          action: 'query',
+          list: 'search',
+          srsearch: search,
+          format: 'json'
+        };
 
-    });
+
+
+        createSearchForm();
+      });
   </script>
 </body>
 
