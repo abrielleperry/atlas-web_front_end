@@ -41,19 +41,32 @@
         }
       }
 
+      // creates form for user to enter first name, last name, and position
       function createForm() {
-        const $form = $('<form>').attr('id', 'family-form'); // new dom element form and sets id to family-form
-        $form.append($('<input>').attr({
+        const form = $('<form>').attr('id', 'family-form');
+
+        // appends an input field of type text to the form
+        // input field is for user to enter their first name
+        // id is firstNameInput and placeholder is First Name
+        form.append($('<input>').attr({
           type: 'text',
           id: 'firstNameInput',
           placeholder: 'First Name'
         }));
-        $form.append($(< 'input' >).attr({
+
+        // appends an input field of type text to the form
+        // input field is for user to enter their last name
+        // id is lastNameInput and placeholder is Last Name
+        form.append($('<input>').attr({
           type: 'text',
           id: 'lastNameInput',
           placeholder: 'Last Name'
         }));
-        $form.append($('<select>').attr({
+
+        // adds a select dropdown to form
+        // user chooses between options Before and After
+        // id is positionSelect
+        form.append($('<select>').attr({
           id: 'positionSelect'
         }).append(
           $('<option>').val('before').text('Before'),
@@ -61,16 +74,12 @@
         ));
 
 
-      }))
-      }
 
-    createFamilyTree();
-    addNewMember("Guillaume", "Salva");
-    addNewMember("Arielle", "Snizt");
-    addNewMember("Fanette", "Snizt");
-    addNewMember("Gerard", "Snizt");
-    addNewMember("Victor", "Salva");
-    });
+        createFamilyTree();
+        createForm();
+
+
+      });
   </script>
 </body>
 
