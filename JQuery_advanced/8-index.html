@@ -56,7 +56,7 @@
 
       // fetch data from wikipedia
       // makes ajax request to wikipedia api to search for users input
-      function queryWikipedia(search) {
+      function queryWikipedia(search, offset = 0) {
         const data = {
           action: 'query',
           list: 'search',
