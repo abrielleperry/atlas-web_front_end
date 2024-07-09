@@ -81,6 +81,18 @@
         }));
 
 
+        // when form is submitted do this function
+        form.submit(function (event) {
+          // prevent forms default action after submission
+          event.preventDefault();
+          // capture value with ids of first name, last name, and position
+          const firstName = $('#firstNameInput').val();
+          const lastName = $('#lastNameInput').val();
+          const position = $('#positionSelect').val();
+          // adds first name, last name to position on family tree
+          addNewMember(firstName, lastName, position);
+
+        })
 
         createFamilyTree();
         createForm();
