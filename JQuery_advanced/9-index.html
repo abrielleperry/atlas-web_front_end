@@ -131,6 +131,8 @@
         }
       }
 
+      // adds loading class w styling opacity to ul before ajax request when true
+      // when false after ajex request, rm loading class which rm opacity from ul results
       function displayLoading(loading) {
         const ul = $('ul').first()
         if (loading) {
