@@ -34,7 +34,10 @@
             $(this).parent().remove();
           })
         );
-        const position == "before" {
+        if (position == "before") {
+          tbody.prepend(row);
+        } else {
+          tbody.append(row);
         }
         tbody.append(row);
       }
