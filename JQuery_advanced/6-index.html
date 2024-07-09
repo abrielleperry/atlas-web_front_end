@@ -43,15 +43,26 @@
 
       function createForm() {
         const $form = $('<form>').attr('id', 'family-form'); // new dom element form and sets id to family-form
+        $form.append($('<input>').attr({
+          type: 'text',
+          id: 'firstNameInput',
+          placeholder: 'First Name'
+        }));
+        $form.append($(< 'input' >).attr({
+          type: 'text',
+          id: 'lastNameInput',
+          placeholder: 'Last Name'
+        }));
 
+      }))
       }
 
-      createFamilyTree();
-      addNewMember("Guillaume", "Salva");
-      addNewMember("Arielle", "Snizt");
-      addNewMember("Fanette", "Snizt");
-      addNewMember("Gerard", "Snizt");
-      addNewMember("Victor", "Salva");
+    createFamilyTree();
+    addNewMember("Guillaume", "Salva");
+    addNewMember("Arielle", "Snizt");
+    addNewMember("Fanette", "Snizt");
+    addNewMember("Gerard", "Snizt");
+    addNewMember("Victor", "Salva");
     });
   </script>
 </body>
