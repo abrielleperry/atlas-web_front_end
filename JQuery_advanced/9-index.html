@@ -85,6 +85,8 @@
           sroffset: offset
         };
 
+        displayLoading(true)
+
         // if success, iterates over search results
         // calls addNewArticle func to pass relevant data to be displayed
         $.ajax({
@@ -101,6 +103,9 @@
               addNewArticle(result.pageid, result.title, result.snippet);
             });
             buildPagination(totalHits, 10, offset)
+          },
+          complete: function () {
+            displayLoading(false)
           }
         });
       }
