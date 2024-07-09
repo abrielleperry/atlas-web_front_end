@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
-
-  <meta charset="utf-8" />
-  <title>Task 0</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 
 <body>
-  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
-    integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
-  <script type="application/javascript">
+  <script>
     $(document).ready(function () {
       function createSearchForm() {
-        const form = $('<form>').appendTo('body')
-        $('<input>').attr('type', 'text').appendTo(form)
-        $('input').sttr('type', 'submit').appendTo(form)
+        const form = $('<form></form>');
+        const input = $('<input type="text">');
+        const submit = $('<input type="submit" value="Search">');
+        const ul = $('<ul></ul>');
 
+        form.append(input);
+        form.append(submit);
+        $('body').append(form);
+        $('body').append(ul);
+
+        form.on('submit', function (event) {
+          event.preventDefault();
+          queryWikipedia(input.val());
+        });
       }
-    })
-
-
+    });
   </script>
 </body>
 
