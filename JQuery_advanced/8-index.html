@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wikipedia Search</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <script>
+    $(document).ready(function () {
+
+      // creates a dynamic search form
+      // adds text input for user to search with submit button
+      // creates a ul element to hold search results
+      function createSearchForm() {
+        const form = $('<form></form>');
+        const input = $('<input type="text">');
+        const submit = $('<input type="submit" value="Search">');
+        const ul = $('<ul></ul>');
+
+        // form appended to body making visible to user
+        form.append(input);
+        form.append(submit);
+        $('body').append(form);
+        $('body').append(ul);
+
+        // event listener for forms submit button
+        // prevents default form submission
+        // instead calls queryWikipedia func with value of input
+        form.on('submit', function (event) {
+          event.preventDefault();
+          queryWikipedia(input.val());
+        });
+      }
+
+      // takes id, title, and snippet from wiki article fetched from api
+      // creates li and 2 p's to hold 3 params
+      function addNewArticle(id, title, snippet) {
+        const li = $('<li></li>');
+        const p1 = $('<p></p>');
+        const span = $('<span></span>').text(`${id} - `);
+        const b = $('<b></b>').text(title);
+        const p2 = $('<p></p>').html(snippet);
+
+        // id and title are styled with span and b tags
+        // adds li to ul to display search results to user
+        p1.append(span).append(b);
+        li.append(p1).append(p2);
+        $('ul').append(li);
+      }
+
+      // fetch data from wikipedia
+      // makes ajax request to wikipedia api to search for users input
+      function queryWikipedia(search) {
+        const data = {
+          action: 'query',
+          list: 'search',
+          srsearch: search,
+          format: 'json'
+        };
+
+        // if success, iterates over search results
+        // calls addNewArticle func to pass relevant data to be displayed
+        $.ajax({
+          url: 'https://en.wikipedia.org/w/api.php',
+          data: data,
+          dataType: 'jsonp',
+          success: function (response) {
+            const results = response.query.search;
+            results.forEach(function (result) {
+              addNewArticle(result.pageid, result.title, result.snippet);
+            });
+          }
+        });
+      }
+
+      createSearchForm();
+    });
+  </script>
+</body>
+
+</html>
