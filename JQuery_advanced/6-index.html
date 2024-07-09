@@ -53,6 +53,13 @@
           id: 'lastNameInput',
           placeholder: 'Last Name'
         }));
+        $form.append($('<select>').attr({
+          id: 'positionSelect'
+        }).append(
+          $('<option>').val('before').text('Before'),
+          $('<option>').val('after').text('After')
+        ));
+
 
       }))
       }
@@ -68,5 +75,3 @@
 </body>
 
 </html>
-
-// $() creates new DOM element
