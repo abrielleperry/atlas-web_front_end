@@ -44,14 +44,19 @@
         titleDiv.append(titleLabel).append(titleTextArea)
         form.append(titleDiv)
 
-
+        const submitButton = $('<input>').attr({ type: 'submit', value: 'Submit' })
+        form.append(submitButton)
 
 
         $('body').append(form);
 
+        $('label').on('click', function () {
+          $(this).next('input', 'textarea').select();
+        })
       }
 
       listPosts();
+      buildForm();
     })
   </script>
 </body>
