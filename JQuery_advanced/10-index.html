@@ -20,6 +20,17 @@
       }
 
 
+      function listPosts() {
+        $.get('http://localhost:3000/posts', function (data) {
+          data.forEach(function (post) {
+            addPostRow(post);
+          });
+        }).fail(function () {
+          alert('Server Error');
+        });
+      }
+
+      listPosts();
     })
   </script>
 </body>
