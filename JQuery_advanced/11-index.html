@@ -36,11 +36,13 @@
         const authorLabel = $('<label></label>').attr('for', 'author').text('Author')
         const authorInput = $('<input>').attr({ type: 'text', id: 'author' })
         authorDiv.append(authorLabel).append(authorInput)
+        form.append(authorDiv)
 
         const titleDiv = $('<div></div>')
         const titleLabel = $('<label></label>').attr('for', 'title').text('Title')
         const titleTextArea = $('<textarea></textarea>').attr('id', 'title')
         titleDiv.append(titleLabel).append(titleTextArea)
+        form.append(titleDiv)
 
 
 
