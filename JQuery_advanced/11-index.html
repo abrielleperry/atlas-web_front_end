@@ -35,12 +35,12 @@
         const authorDiv = $('<div></div>');
         const authorLabel = $('<label></label>').attr('for', 'author').text('Author')
         const authorInput = $('<input>').attr({ type: 'text', id: 'author' })
-        authorDiv.append(authorLabel, authorInput)
+        authorDiv.append(authorLabel).append(authorInput)
 
         const titleDiv = $('<div></div>')
         const titleLabel = $('<label></label>').attr('for', 'title').text('Title')
         const titleTextArea = $('<textarea></textarea>').attr('id', 'title')
-        titleDiv.append(titleLabel, titleTextArea)
+        titleDiv.append(titleLabel).append(titleTextArea)
 
 
 
