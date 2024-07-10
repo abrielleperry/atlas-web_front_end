@@ -32,28 +32,18 @@
 
       function buildForm() {
         const form = $('<form></form>');
-        const authorDiv = $('<div></div>');
-        const authorLabel = $('<label></label>').attr('for', 'author').text('Author')
-        const authorInput = $('<input>').attr({ type: 'text', id: 'author' })
-        authorDiv.append(authorLabel).append(authorInput)
-        form.append(authorDiv)
-
-        const titleDiv = $('<div></div>')
-        const titleLabel = $('<label></label>').attr('for', 'title').text('Title')
-        const titleTextArea = $('<textarea></textarea>').attr('id', 'title')
-        titleDiv.append(titleLabel).append(titleTextArea)
-        form.append(titleDiv)
-
-        const submitButton = $('<input>').attr({ type: 'submit', value: 'Submit' })
-        form.append(submitButton)
-
-
+        form.append('<div><label for="author">Author</label><input type="text" id="author"></div>');
+        form.append('<div><label for="title">Title</label><textarea id="title"></textarea></div>');
+        form.append('<input type="submit">');
         $('body').append(form);
 
-        $('label').on('click', function () {
-          $(this).next('input', 'textarea').select();
+        form.submit(function (e) {
+          e.preventDefault();
+          sendForm()
         })
       }
+
+
 
       listPosts();
       buildForm();
