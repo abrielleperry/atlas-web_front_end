@@ -6,4 +6,4 @@ function welcome(firstName, lastName) {
   }
   displayFullName();
 }
-console.log('welcome('Holberton', 'School');')
+console.log(welcome('Holberton', 'School'));
