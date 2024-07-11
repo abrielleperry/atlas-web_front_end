@@ -11,3 +11,8 @@ function createClassRoom(numbersOfStudents) { // create class room w specific nu
   return students; // return array of students seat numbers
 }
 let classRoom = createClassRoom(10); // create class room w 10 students
+
+
+console.log(classRoom[0]());
+console.log(classRoom[3]());
+console.log(classRoom[9]());
