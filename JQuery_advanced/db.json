@@ -2,8 +2,8 @@
   "posts": [
     {
       "id": 1,
-      "title": "Down the Drain",
-      "author": "Julia Fox"
+      "title": "json-server",
+      "author": "typicode"
     },
     {
       "title": "fd",
@@ -49,6 +49,41 @@
       "title": "",
       "author": "",
       "id": 10
+    },
+    {
+      "id": "af6c",
+      "title": "dfvdfv",
+      "author": "dfvdfvd"
+    },
+    {
+      "id": "b91a",
+      "title": "fsdfsdfsf\n",
+      "author": "fsdfsf"
+    },
+    {
+      "id": "1a71",
+      "title": "iugiygiyg",
+      "author": "khgjjh"
+    },
+    {
+      "id": "e98c",
+      "title": "gkugjhgjh",
+      "author": "fjhfjh"
+    },
+    {
+      "id": "8389",
+      "title": "jhvhvjh",
+      "author": "yhfhjjh"
+    },
+    {
+      "id": "a6a8",
+      "title": "jhvjhv",
+      "author": "jfjgfgj"
+    },
+    {
+      "id": "cada",
+      "title": "hfhhgh",
+      "author": "jfjf"
     }
   ],
   "comments": [
