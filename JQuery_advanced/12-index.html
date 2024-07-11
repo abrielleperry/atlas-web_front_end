@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Task 11</title>
+  <title>Task 12</title>
   <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
     integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -16,25 +16,25 @@
       buildForm();
 
       function addPostRow(data) {
-        const paragraph = $('<p id="row-' + data.id + '"</p>');
-        const span = $('<span></span>').text(`Post created with id: ${data.id}, title: ${data.title}, author: ${data.author}`);
-        const deleteSpan = ('<span>(delete)</span>')
-        paragraph.append(span);
-        deleteSpan.click(function () { deletePost(data.id) })
+        const paragraph = $('<p></p>').attr('id', 'row-' + data.id);
+        const infoSpan = $('<span></span>').text(`Post created with id: ${data.id}, title: ${data.title}, author: ${data.author}`);
+        const deleteSpan = $('<span>(delete)</span>').click(function () { deletePost(data.id); });
+
+        paragraph.append(infoSpan);
+        paragraph.append(deleteSpan);
         $('body').append(paragraph);
       }
-
       function deletePost(id) {
         $.ajax({
           url: 'http://localhost:3000/posts/' + id,
           type: 'DELETE',
           success: function () {
-            $('#' + 'row' + id).remove()
+            $('#row-' + id).remove();
           },
           error: function () {
-            alert('Post was not deleted')
+            alert('Post was not deleted');
           }
-        })
+        });
       }
 
       function listPosts() {
