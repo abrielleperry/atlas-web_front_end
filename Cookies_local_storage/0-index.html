@@ -19,8 +19,7 @@
   <script>
     function setCookies() {
       var firstname = getElementById('firstname').value
-
-      document.cookie = 'firstname=' + encodeURIComponent(firstname)
+      document.cookie = 'firstname=${firstname}'
 
       alert('Cookies set! Good job Abrielle!')
     }
