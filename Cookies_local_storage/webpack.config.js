@@ -1,15 +1,15 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  mode: 'development', // Consider setting the mode explicitly as suggested by the warning
+  entry: '/src/index.js', // Corrected path
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'), // This line is fine if you plan to use the dist directory later
+    path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
     static: [
-      path.join(__dirname, 'Cookies_local_storage') // Serve Cookies_local_storage directory
+      path.join(__dirname, 'Cookies_local_storage')
     ],
     compress: true,
     port: 8080,
