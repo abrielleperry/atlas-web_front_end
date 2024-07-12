@@ -19,10 +19,10 @@
   <script src="src/index.js"></script>
   <script>
     function setCookies() {
-      let firstname = getElementById('firstname').value;
+      let firstname = document.getElementById('firstname').value;
       document.cookie = 'firstname=${firstname}';
 
-      let email = getElementById('email').value;
+      let email = document.getElementById('email').value;
       document.cookie = 'email=${email}';
 
       alert('Cookies set! Good job Abrielle!')
