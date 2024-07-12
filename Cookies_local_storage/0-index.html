@@ -20,10 +20,10 @@
   <script>
     function setCookies() {
       let firstname = document.getElementById('firstname').value;
-      document.cookie = 'firstname=${firstname}';
+      document.cookie = `firstname=${firstname}`;
 
       let email = document.getElementById('email').value;
-      document.cookie = 'email=${email}';
+      document.cookie = `email=${email}`;
 
       alert('Cookies set! Good job Abrielle!')
     }
@@ -33,7 +33,7 @@
         .map(cookie => cookie.split('=')));
 
       let p = document.createElement('p');
-      p.innerHTML = 'Cookies: ' + JSON.stringify(cookies);
+      p.innerHTML = `Cookies: + ${JSON.stringify(cookies)}`;
       document.body.appendChild(p);
 
     }
