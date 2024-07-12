@@ -18,15 +18,18 @@
   <button type="button" onclick="showCookies()">Show the cookies</button>
   <script>
     function setCookies() {
-      var firstname = getElementById('firstname').value
-      document.cookie = 'firstname=${firstname}'
+      let firstname = getElementById('firstname').value
+      document.cookie = 'firstname=${firstname}';
 
       alert('Cookies set! Good job Abrielle!')
     }
 
     function showCookies() {
-      para = document.createElement('p')
-      node = document.createTextNode('Cookies:' + )
+      let cookies = Object.fromEntires(document.cookie.split('; ')
+        .map(cookie => cookie.split('=')));
+
+      let p = document.createElement('p');
+
     }
   </script>
 </body>
