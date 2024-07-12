@@ -16,6 +16,7 @@
   <br>
   <h1>Cookies</h1>
   <button type="button" onclick="showCookies()">Show the cookies</button>
+  <script src="src/index.js"></script>
   <script>
     function setCookies() {
       let firstname = getElementById('firstname').value;
@@ -28,7 +29,7 @@
     }
 
     function showCookies() {
-      let cookies = Object.fromEntires(document.cookie.split('; ')
+      let cookies = Object.fromEntries(document.cookie.split('; ')
         .map(cookie => cookie.split('=')));
 
       let p = document.createElement('p');
