@@ -20,16 +20,15 @@
   <script>
     function setCookies() {
       let firstname = document.getElementById('firstname').value;
-      document.cookie = `firstname=${firstname}`;
-
       let email = document.getElementById('email').value;
-      document.cookie = `email=${email}`;
-
+      
+      
       let currentDate = new Date();
       currentDate.setTime(currentDate.getTime() + (10 * 24 * 60 * 60 * 1000));
-      let expirationDate = `expires=${expirationDate.toUTCString()}`;
-      document.cookie = expirationDate;
-
+      let expirationDate = `expires=${currentDate.toUTCString()}`;
+      
+      document.cookie = `firstname=${firstname};, expires=${expirationDate}`;
+      document.cookie = `email=${email}, expires=${expirationDate} `;
 
 
       alert('Cookies set! Good job Abrielle!')
