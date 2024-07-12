@@ -33,8 +33,11 @@
         .map(cookie => cookie.split('=')));
 
       let p = document.createElement('p');
-      p.innerHTML = `Cookies: + ${JSON.stringify(cookies)}`;
+      p.innerHTML = 'Cookies: ' + JSON.stringify(cookies);
       document.body.appendChild(p);
+
+      alert('Cookies shown! Good job Abrielle!')
+
 
     }
   </script>
