@@ -25,7 +25,7 @@
       let email = document.getElementById('email').value;
       document.cookie = `email=${email}`;
 
-      let currrentDate = new Date();
+      let currentDate = new Date();
       currentDate.setTime(currentDate.getTime() + (10 * 24 * 60 * 60 * 1000));
       let expirationDate = `expires=${expirationDate.toUTCString()}`;
       document.cookie = expirationDate;
