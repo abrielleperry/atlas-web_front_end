@@ -49,7 +49,7 @@
     function getCookie(name) {
       let cookies = Object.fromEntries(document.cookie.split('; ')
         .map(cookie => cookie.split('=')));
-        return cookies[name] || null;
+        return cookies[name] || [];
     }
   </script>
 </body>
