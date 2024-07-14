@@ -35,8 +35,8 @@
     }
 
     function showCookies() {
-      let cookies = Object.fromEntries(document.cookie.split('; ')
-        .map(cookie => cookie.split('=')));
+      let firstname = getCookie('firstname');
+      let email = getCookie('email');
 
       let p = document.createElement('p');
       p.innerHTML = 'Cookies: ' + JSON.stringify(cookies);
@@ -49,8 +49,8 @@
     function getCookie(name) {
       let cookies = Object.fromEntries(document.cookie.split('; ')
         .map(cookie => cookie.split('=')));
+        return cookies[name] || null;
     }
-    return cookies[name] || null;
   </script>
 </body>
 
