@@ -23,7 +23,6 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@latest/dist/js.cookie.min.js"></script>
   <script>
 
-
     function setCookiesAndShowWelcomeMessage(){
       let firstname = document.getElementById('firstname').value;
       let email = document.getElementById('email').value;
@@ -36,8 +35,8 @@
   }
 
     function showCookies() {
-      let firstname = getCookie('firstname');
-      let email = getCookie('email');
+      let firstname = Cookies.get('firstname');
+      let email = Cookies.get('email');
 
       let p = document.createElement('p');
       p.className = 'cookie-info';
@@ -46,8 +45,6 @@
 
       alert('Cookies shown! Good job Abrielle!')
     }
-
-
 
 
     function showForm() {
@@ -63,8 +60,8 @@
     }
 
     function deleteCookiesAndShowForm() {
-      cookies.remove('firstname');
-      cookies.remove('email');
+      Cookies.remove('firstname');
+      Cookies.remove('email');
       
       document.querySelectorAll('.cookie-info').forEach(element => element.remove());
       showForm();
@@ -72,7 +69,7 @@
     }
 
     function showWelcomeMessageOrForm() {
-    let firstname = getCookie('firstname');
+    let firstname = Cookies.get('firstname');
 
     if (firstname) {
       hideForm();
