@@ -50,7 +50,7 @@
     function getCookie(name) {
       let cookies = Object.fromEntries(document.cookie.split('; ')
         .map(cookie => cookie.split('=')));
-        return cookies[name] || [];
+        return cookies[name] || '';
     }
 
     function showForm() {
@@ -74,8 +74,19 @@
     function showWelcomeMessageOrForm() {
     let firstname = getCookie('firstname');
 
-    
+    if (firstname) {
+      hideForm();
+      document.body.innerHTML =
+      `<h1 id='wecome-message'>Welcome ${firstname}
+        a href='welcome message'
+        onclick='deleteCookiesAndShowForm()'
+        style='font-weight: normal; font-style: italic; margin-right: 10px;'(Log out)</a>
+        </h1>
+        ${document.body.innerHTML}`;
+      } else {
+        showForm();
     }
+  }
 
   </script>
 </body>
