@@ -22,24 +22,10 @@
   <script src="src/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@latest/dist/js.cookie.min.js"></script>
   <script>
-    function setCookies() {
-      let firstname = document.getElementById('firstname').value;
-      let email = document.getElementById('email').value;
-      
-      let currentDate = new Date();
-      currentDate.setTime(currentDate.getTime() + (10 * 24 * 60 * 60 * 1000));
-      let expirationDate = 'expires= '+ currentDate.toUTCString();
-      
-      document.cookie = `firstname=${firstname}; ${expirationDate};`;
-      document.cookie = `email=${email}; ${expirationDate};`;
-
-      showWelcomeMessageOrForm();
-    }
 
     function setCookiesAndShowWelcomeMessage(){
       Cookies.set('firstname', firstname, { expires:10 });
       Cookies.set('email', email, { expires:10 });
-
 
       alert('Cookies set! Good job Abrielle!')
       showWelcomeMessageOrForm();
@@ -57,9 +43,6 @@
       alert('Cookies shown! Good job Abrielle!')
     }
 
-    function getCookie(name) {
-      return Cookies.get(name);
-    }
 
 
     function showForm() {
