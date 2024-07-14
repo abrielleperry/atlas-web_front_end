@@ -23,7 +23,11 @@
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@latest/dist/js.cookie.min.js"></script>
   <script>
 
+
     function setCookiesAndShowWelcomeMessage(){
+      let firstname = document.getElementById('firstname').value;
+      let email = document.getElementById('email').value;
+
       Cookies.set('firstname', firstname, { expires:10 });
       Cookies.set('email', email, { expires:10 });
 
@@ -43,6 +47,9 @@
       alert('Cookies shown! Good job Abrielle!')
     }
 
+    function getCookie(name) {
+      return Cookies.get(name);
+    }
 
 
     function showForm() {
