@@ -41,6 +41,7 @@
       let email = getCookie('email');
 
       let p = document.createElement('p');
+      p.className = 'cookie-info';
       p.innerHTML = `Email: ${email} Firstname: ${firstname}`;
       document.body.appendChild(p);
 
@@ -66,9 +67,12 @@
     }
 
     function deleteCookiesAndShowForm() {
-      document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = 'firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+      
+      document.querySelectorAll('.cookie-info').forEach(element => element.remove());
       showForm();
+
     }
 
     function showWelcomeMessageOrForm() {
@@ -76,17 +80,15 @@
 
     if (firstname) {
       hideForm();
-      document.body.innerHTML =
-      `<h1 id='wecome-message'>Welcome ${firstname}
-        a href='welcome message'
-        onclick='deleteCookiesAndShowForm()'
-        style='font-weight: normal; font-style: italic; margin-right: 10px;'(Log out)</a>
-        </h1>`;
+      let welcomeMessage = document.createElement('h1');
+        welcomeMessage.id = 'welcome-message';
+        welcomeMessage.innerHTML = `Welcome ${firstname} <a href='#' onclick='deleteCookiesAndShowForm()' style='font-weight: normal; font-style: italic; margin-left: 10px;'>(Log out)</a>`;
+        document.body.appendChild(welcomeMessage);
       } else {
         showForm();
     }
   }
-
+  document.addEventListener('DOMContentLoaded', showWelcomeMessageOrForm);
   </script>
 </body>
 
