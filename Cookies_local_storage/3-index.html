@@ -16,11 +16,11 @@
   <br>
   <h1>Cookies</h1>
   <button type="button" onclick="showCookies()">Show the cookies</button>
-  <div>
-    <h2>Login to Website</h2>
-    <input type="text" id="firstname" placeholder="Firstname">
-    <input type="text" id="email" placeholder="Email">
-    <button type="button" onclick="setCookies()">Log me in</button>
+  <div id="login-form">
+      <h2>Login to Website</h2>
+      <input type="text" id="firstname" placeholder="Firstname">
+      <input type="text" id="email" placeholder="Email">
+      <button type="button" onclick="setCookies()">Log me in</button>
   </div>
   <script src="src/index.js"></script>
   <script>
@@ -28,14 +28,12 @@
       let firstname = document.getElementById('firstname').value;
       let email = document.getElementById('email').value;
       
-      
       let currentDate = new Date();
       currentDate.setTime(currentDate.getTime() + (10 * 24 * 60 * 60 * 1000));
       let expirationDate = 'expires= '+ currentDate.toUTCString();
       
       document.cookie = `firstname=${firstname}; ${expirationDate};`;
       document.cookie = `email=${email}; ${expirationDate};`;
-
 
       alert('Cookies set! Good job Abrielle!')
     }
@@ -48,7 +46,6 @@
       p.innerHTML = `Email: ${email} Firstname: ${firstname}`;
       document.body.appendChild(p);
 
-
       alert('Cookies shown! Good job Abrielle!')
     }
 
@@ -56,6 +53,10 @@
       let cookies = Object.fromEntries(document.cookie.split('; ')
         .map(cookie => cookie.split('=')));
         return cookies[name] || [];
+    }
+
+    function showForm {
+
     }
   </script>
 </body>
