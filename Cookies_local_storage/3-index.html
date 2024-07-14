@@ -9,20 +9,15 @@
 
 
 <body>
-  <h1>Login to the website</h1>
-  <input type="text" id="firstname" placeholder="Firstname">
-  <input type="text" id="email" placeholder="Email">
-  <button type="button" onclick="setCookies()">Log me in</button>
-  <br>
-  <h1>Cookies</h1>
-  <button type="button" onclick="showCookies()">Show the cookies</button>
-
   <div id="login-form">
       <h2>Login to Website</h2>
       <input type="text" id="firstname" placeholder="Firstname">
       <input type="text" id="email" placeholder="Email">
       <button type="button" onclick="setCookies()">Log me in</button>
   </div>
+  <br>
+  <h1>Cookies</h1>
+  <button type="button" onclick="showCookies()">Show the cookies</button>
 
   <script src="src/index.js"></script>
   <script>
@@ -38,6 +33,7 @@
       document.cookie = `email=${email}; ${expirationDate};`;
 
       alert('Cookies set! Good job Abrielle!')
+      showWelcomeMessageOrForm();
     }
 
     function showCookies() {
@@ -58,6 +54,10 @@
     }
 
     function showForm() {
+      let welcomeMessage = document.getElementById('welcome-message');
+      if (welcomeMessage) {
+        welcomeMessage.remove();
+      } 
       document.getElementById('login-form').style.display = 'block';
     }
 
@@ -71,6 +71,11 @@
       return showForm();
     }
 
+    function showWelcomeMessageOrForm() {
+    let firstname = getCookie('firstname');
+
+    
+    }
 
   </script>
 </body>
