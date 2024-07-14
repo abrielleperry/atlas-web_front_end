@@ -37,8 +37,8 @@
     }
 
     function setCookiesAndShowWelcomeMessage(){
-      Cookies.set('firstname', firstname);
-      Cookies.set('email', email);
+      Cookies.set('firstname', firstname, { expires:10 });
+      Cookies.set('email', email, { expires:10 });
 
 
       alert('Cookies set! Good job Abrielle!')
