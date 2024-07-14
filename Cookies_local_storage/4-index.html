@@ -13,15 +13,14 @@
       <h2>Login to Website</h2>
       <input type="text" id="firstname" placeholder="Firstname">
       <input type="text" id="email" placeholder="Email">
-      <button type="button" onclick="setCookies()">Log me in</button>
+      <button type="button" onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
   </div>
   <br>
   <h1>Cookies</h1>
   <button type="button" onclick="showCookies()">Show the cookies</button>
 
   <script src="src/index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@latest/dist/js.cookie.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@latest/dist/js.cookie.min.js"></script>
   <script>
     function setCookies() {
       let firstname = document.getElementById('firstname').value;
@@ -38,6 +37,13 @@
       showWelcomeMessageOrForm();
     }
 
+    function setCookiesAndShowWelcomeMessage(){
+      Cookies.set('firstname', firstname);
+      Cookies.set('email', email);
+
+      showWelcomeMessageOrForm();
+  }
+
     function showCookies() {
       let firstname = getCookie('firstname');
       let email = getCookie('email');
@@ -51,7 +57,7 @@
     }
 
     function getCookie(name) {
-    return Cookies.get(name);
+      return Cookies.get(name);
     }
 
 
@@ -90,10 +96,6 @@
     }
   }
 
-  function setCookiesAndShowWelcomeMessage(){
-    Cookies.set('name', 'value');
-    showWelcomeMessageOrForm();
-  }
 
   document.addEventListener('DOMContentLoaded', showWelcomeMessageOrForm);
   </script>
