@@ -69,6 +69,7 @@
 
     function deleteCookiesAndShowForm() {
       cookies.remove('firstname');
+      cookies.remove('email');
 
       document.cookie = 'firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
       document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
