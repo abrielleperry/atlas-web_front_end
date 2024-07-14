@@ -51,10 +51,9 @@
     }
 
     function getCookie(name) {
-      let cookies = Object.fromEntries(document.cookie.split('; ')
-        .map(cookie => cookie.split('=')));
-        return cookies[name] || '';
+    let value = Cookies.get('name');
     }
+
 
     function showForm() {
       let welcomeMessage = document.getElementById('welcome-message');
@@ -69,6 +68,8 @@
     }
 
     function deleteCookiesAndShowForm() {
+      cookies.remove('firstname');
+
       document.cookie = 'firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
       document.cookie = 'email=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
       
@@ -90,6 +91,12 @@
         showForm();
     }
   }
+
+  function setCookiesAndShowWelcomeMessage(){
+    Cookies.set('name', 'value');
+    WelcomeMessageOrForm();
+  }
+
   document.addEventListener('DOMContentLoaded', showWelcomeMessageOrForm);
   </script>
 </body>
