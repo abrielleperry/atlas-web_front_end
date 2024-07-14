@@ -33,7 +33,6 @@
       document.cookie = `firstname=${firstname}; ${expirationDate};`;
       document.cookie = `email=${email}; ${expirationDate};`;
 
-      alert('Cookies set! Good job Abrielle!')
       showWelcomeMessageOrForm();
     }
 
@@ -41,6 +40,8 @@
       Cookies.set('firstname', firstname);
       Cookies.set('email', email);
 
+
+      alert('Cookies set! Good job Abrielle!')
       showWelcomeMessageOrForm();
   }
 
