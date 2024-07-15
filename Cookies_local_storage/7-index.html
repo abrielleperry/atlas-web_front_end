@@ -50,10 +50,10 @@
 
         function getCartFromStorage() {
           const cart = sessionStorage.getItem('cart')
-          if( sessionStorage.length > 0) {
+          if (cart) {
             JSON.parse(sessionStorage)
         } else {
-          ''
+          {}
         }
 
         function addItemToCart(item) {
