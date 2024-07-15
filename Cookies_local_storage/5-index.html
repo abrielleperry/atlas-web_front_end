@@ -22,6 +22,8 @@
       localStorage.setItem(item, 'true');
     }
 
+    // dynamically creates an ul in document body w each li item
+    // corresponding to an item in availableItems array
     function createStorage(){
       let ul = document.createElement('ul'); // create ul element
       document.body.append(ul) // append ul to body
