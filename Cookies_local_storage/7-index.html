@@ -61,6 +61,10 @@
             }
           }
 
+          function removeItemfromCart(item) {
+            delete sessionStorage('item')
+          }
+
           createStore()
           displayCart()
         }
