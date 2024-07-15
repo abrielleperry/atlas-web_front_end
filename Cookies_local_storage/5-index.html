@@ -12,9 +12,7 @@
     if (typeof(Storage) === 'undefined') {
       alert('Sorry, your browser does not support Web storage. Try again with a better one')
     } else {
-      createStorage();
-      displayCart();
-    }
+  
     
     // add key to local storage w val of true
     // local storage only supports string values
@@ -46,6 +44,9 @@
           document.body.appendChild(cartMessage);
           }
         }
+      createStorage();
+      displayCart();
+    }
   </script>
 </body>
 </html>
