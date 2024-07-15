@@ -19,6 +19,10 @@
         function addItemToCart(item) {
           sessionStorage.setItem(item, 'true')
         }
+        if (sessionStorage.hasOwnProperty('item')) {
+          sessionStorage[item]++
+        }
+        displayCart()
 
         // dynamically creates an ul in document body w each li item
         // corresponding to an item in availableItems array
@@ -56,8 +60,6 @@
             {
             }
           }
-
-          function addItemToCart(item) {}
 
           createStore()
           displayCart()
