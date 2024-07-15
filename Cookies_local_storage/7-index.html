@@ -14,9 +14,6 @@
           'Sorry, your browser does not support Web storage. Try again with a better one'
         )
       } else {
-        createStore()
-        displayCart()
-
         // add key to local storage w val of true
         // local storage only supports string values
         function addItemToCart(item) {
@@ -83,6 +80,8 @@
           createStore()
           displayCart()
         }
+        createStore()
+        displayCart()
       }
     </script>
   </body>
