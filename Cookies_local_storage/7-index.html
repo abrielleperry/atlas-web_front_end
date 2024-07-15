@@ -49,11 +49,17 @@
         }
 
         function getCartFromStorage() {
+          const cart = sessionStorage.getItem('cart')
           if( sessionStorage.length > 0) {
-            const cartContent = JSON.parse(sessionStorage)
+            JSON.parse(sessionStorage)
         } else {
           ''
         }
+
+        function addItemToCart(item) {
+
+        }
+
 
         createStorage()
         displayCart()
