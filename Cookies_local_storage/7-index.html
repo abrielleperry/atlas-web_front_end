@@ -73,7 +73,7 @@
 
         function removeItemfromCart(item) {
           delete cart[item]
-          sessionStorage.removeItem('item')
+          sessionStorage.setItem('cart'.JSON.stringify(cart))
           displayCart()
         }
 
