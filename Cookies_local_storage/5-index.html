@@ -9,6 +9,13 @@
   <script>
     const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
 
+    if (typeof(Storage) !== 'undefined') {
+      createStorage();
+      displayCart();
+    } else {
+      alert('Sorry, your browser does not support Web storage. Try again with a better one')
+    }
+    
   </script>
 </body>
 </html>
