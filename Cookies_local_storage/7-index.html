@@ -47,6 +47,14 @@
             document.body.appendChild(cartMessage) // append p element to body
           }
         }
+
+        function getCartFromStorage() {
+          if( sessionStorage.length > 0) {
+            const cartContent = JSON.parse(sessionStorage)
+        } else {
+          ''
+        }
+
         createStorage()
         displayCart()
       }
