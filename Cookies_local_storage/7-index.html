@@ -14,6 +14,9 @@
           'Sorry, your browser does not support Web storage. Try again with a better one'
         )
       } else {
+        createStore()
+        displayCart()
+
         // add key to local storage w val of true
         // local storage only supports string values
         function addItemToCart(item) {
@@ -54,15 +57,15 @@
             cartMessage.textContent = `You previously had ${cartItems.length} in your cart`
             document.body.appendChild(cartMessage) // append p element to body
           }
+          updateCartItems()
         }
 
         function getCartFromStorage() {
           const cart = sessionStorage.getItem('cart')
           if (cart) {
-            JSON.parse(sessionStorage)
+            JSON.parse(cart)
           } else {
-            {
-            }
+            return {}
           }
 
           function removeItemfromCart(item) {
@@ -74,6 +77,8 @@
             sessionStorage.clear()
             displayCart()
           }
+
+          function updateCartItems() {}
 
           createStore()
           displayCart()
