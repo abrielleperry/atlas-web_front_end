@@ -41,7 +41,10 @@
         }
 
         function displayCart() {
+          const yourCart = document.createElement('h2')
           const cartItems = Object.keys(sessionStorage) // get all keys from local storage
+
+          yourCart.textContent = 'Your cart'
 
           // check if any items in cart
           if (cartItems.length > 0) {
