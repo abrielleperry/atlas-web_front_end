@@ -34,6 +34,15 @@
           });
       }
     
+      function displayCart() {
+        avilableItems(forEach(key)) {
+          if (localStorage.getItem(key) !== null) {
+            const p = document.createElement('p');
+            p.textContent = 'You previously had ' + key + ' in your cart';
+            body.document.appendChild(p);
+          }
+        }
+      }
   </script>
 </body>
 </html>
