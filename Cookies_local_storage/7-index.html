@@ -45,6 +45,7 @@
           const cartItems = Object.keys(sessionStorage) // get all keys from local storage
 
           yourCart.textContent = 'Your cart'
+          document.body.appendChild(yourCart)
 
           // check if any items in cart
           if (cartItems.length > 0) {
