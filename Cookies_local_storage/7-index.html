@@ -21,12 +21,14 @@
       // add key to local storage w val of true
       // local storage only supports string values
       function addItemToCart(item) {
-        sessionStorage.setItem(item, 'true')
+        if (!cart[item]) {
+          cart[item] = 1
+        } else {
+          cart[item]++
+        }
+        sessionStorage.setItem('cart', JSON.stringify(cart))
+        displayCart()
       }
-      if (sessionStorage.hasOwnProperty('item')) {
-        sessionStorage[item]++
-      }
-      displayCart()
 
       // dynamically creates an ul in document body w each li item
       // corresponding to an item in availableItems array
