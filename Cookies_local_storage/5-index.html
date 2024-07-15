@@ -23,12 +23,12 @@
     }
 
     function createStorage(){
-      let ul = document.createElement('ul');
-      document.body.append(ul)
-      availableItems.forEach(function(item) {
-        const li = document.createElement('li');
-          li.textContent = item;
-            ul.appendChild(li);
+      let ul = document.createElement('ul'); // create ul element
+      document.body.append(ul) // append ul to body
+      availableItems.forEach(function(item) { // loop through availableItems
+        const li = document.createElement('li'); // create li element
+          li.textContent = item; // text displayed for each li will be the name of item from avalableItems array
+            ul.appendChild(li); // append li to end of ul (move specified node (li) to end parent node (ul))
           });
       }
     
