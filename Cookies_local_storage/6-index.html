@@ -17,7 +17,7 @@
         // add key to local storage w val of true
         // local storage only supports string values
         function addItemToCart(item) {
-          localStorage.setItem(item, 'true')
+          sessionStorage.setItem(item, 'true')
         }
 
         // dynamically creates an ul in document body w each li item
@@ -37,7 +37,7 @@
         }
 
         function displayCart() {
-          const cartItems = Object.keys(localStorage) // get all keys from local storage
+          const cartItems = Object.keys(sessionStorage) // get all keys from local storage
 
           // check if any items in cart
           if (cartItems.length > 0) {
