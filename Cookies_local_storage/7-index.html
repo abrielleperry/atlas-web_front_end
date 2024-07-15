@@ -62,7 +62,13 @@
           }
 
           function removeItemfromCart(item) {
-            delete sessionStorage('item')
+            sessionStorage.removeItem('item')
+            displayCart()
+          }
+
+          function clearCart() {
+            sessionStorage.clear()
+            displayCart()
           }
 
           createStore()
