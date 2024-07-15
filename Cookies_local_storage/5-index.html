@@ -25,13 +25,13 @@
     function createStorage(){
       let ul = document.createElement('ul');
       document.body.append(ul)
-      items(forEach.function(item)) {
+      availableItems.forEach(function(item) {
         const li = document.createElement('li');
-          if li == item {
-            li.displayName = item;
-          }
+          li.textContent = item;
+            ul.appendChild(li);
+          });
       }
-    }
+    
   </script>
 </body>
 </html>
