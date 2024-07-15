@@ -22,7 +22,7 @@
 
         // dynamically creates an ul in document body w each li item
         // corresponding to an item in availableItems array
-        function createStorage() {
+        function createStore() {
           let ul = document.createElement('ul') // create ul element
           document.body.append(ul) // append ul to body
           availableItems.forEach(function (item) {
@@ -47,7 +47,7 @@
             document.body.appendChild(cartMessage) // append p element to body
           }
         }
-        createStorage()
+        createStore()
         displayCart()
       }
     </script>
