@@ -38,13 +38,15 @@
       }
     
       function displayCart() {
-        avilableItems(forEach(key)) {
-          if (availableItems.getItem(key) !== null) {
-            const p = document.createElement('p');
-            p.textContent = 'You previously had ' + key + ' in your cart';
-            document.body.appendChild(p);
+        const cartItems = Object.keys(localStorage);
+
+        if (cartItems.length > 0) {
+          const cartMessage = document.createElement('p');
+          cartMessage.textContent = `You previously had ${cartItems.length} in your cart`;
+          document.body.appendChild(cartMessage);
           }
         }
+        createStorage();
       }
   </script>
 </body>
