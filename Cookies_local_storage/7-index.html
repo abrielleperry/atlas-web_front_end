@@ -7,7 +7,7 @@
   </head>
   <body>
     <script>
-      const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water']
+      let availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water']
       let cart = {}
 
       if (typeof sessionStorage === 'undefined') {
@@ -19,7 +19,7 @@
       }
 
       function getCartFromStorage() {
-        const cart = sessionStorage.getItem('cart')
+        let cart = sessionStorage.getItem('cart')
         if (cart) {
           JSON.parse(cart)
         } else {
@@ -56,11 +56,11 @@
           headerAvailProds.textContent = 'Available products:'
           document.body.appendChild(headerAvailProds)
 
-          let ul = document.createElement('ul') // create ul element
+          const ul = document.createElement('ul') // create ul element
           document.body.append(ul) // append ul to body
           availableItems.forEach(function (item) {
             // loop through availableItems
-            const li = document.createElement('li') // create li element
+            let li = document.createElement('li') // create li element
             li.textContent = item // text displayed for each li will be the name of item from avalableItems array
             li.addEventListener('click', function () {
               addItemToCart(item)
@@ -71,17 +71,26 @@
 
         function displayCart() {
           // h2 : 'Your cart'
-          const yourCart = document.createElement('h2')
+          let yourCart = document.createElement('h2')
           yourCart.textContent = 'Your cart'
           document.body.appendChild(yourCart)
 
-          const divCart = document.createElement('div')
+          let divCart = document.createElement('div')
           document.body.appendChild(divCart)
 
           updateCart()
         }
 
-        function updateCart() {}
+        function updateCart() {
+          divCart.innerHTML = ''
+
+          const ul = document.createElement('ul')
+
+          const clearMyCart = document.createElement('li')
+          clearMyCart.textContent = 'Clear my cart'
+          clearMyCart.addEventListener('click', clearCart)
+          ul.appendChild(clearMyCart)
+        }
 
         createStore()
         displayCart()
