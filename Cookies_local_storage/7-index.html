@@ -18,57 +18,24 @@
         displayCart()
       }
 
-      // add key to local storage w val of true
-      // local storage only supports string values
-      function addItemToCart(item) {
-        if (!cart[item]) {
-          cart[item] = 1
-        } else {
-          cart[item]++
-        }
-        sessionStorage.setItem('cart', JSON.stringify(cart))
-        displayCart()
-      }
-
-      // dynamically creates an ul in document body w each li item
-      // corresponding to an item in availableItems array
-      function createStore() {
-        let ul = document.createElement('ul') // create ul element
-        document.body.append(ul) // append ul to body
-        availableItems.forEach(function (item) {
-          // loop through availableItems
-          const li = document.createElement('li') // create li element
-          li.textContent = item // text displayed for each li will be the name of item from avalableItems array
-          li.addEventListener('click', function () {
-            addItemToCart(item)
-          })
-          ul.appendChild(li) // append li to end of ul (move specified node (li) to end parent node (ul))
-        })
-      }
-
-      function displayCart() {
-        const yourCart = document.createElement('h2')
-        const cartItems = Object.keys(sessionStorage) // get all keys from local storage
-
-        yourCart.textContent = 'Your cart'
-        document.body.appendChild(yourCart)
-
-        // check if any items in cart
-        if (cartItems.length > 0) {
-          const cartMessage = document.createElement('p') // create p element
-          // set text content of p element to display message w num of items in cart
-          cartMessage.textContent = `You previously had ${cartItems.length} in your cart`
-          document.body.appendChild(cartMessage) // append p element to body
-        }
-        updateCartItems()
-      }
-
       function getCartFromStorage() {
         const cart = sessionStorage.getItem('cart')
         if (cart) {
           JSON.parse(cart)
         } else {
           return {}
+        }
+
+        // add key to local storage w val of true
+        // local storage only supports string values
+        function addItemToCart(item) {
+          if (!cart[item]) {
+            cart[item] = 1
+          } else {
+            cart[item]++
+          }
+          sessionStorage.setItem('cart', JSON.stringify(cart))
+          displayCart()
         }
 
         function removeItemfromCart(item) {
@@ -80,6 +47,43 @@
         function clearCart() {
           sessionStorage.setItem('cart', JSON.stringify(cart))
           displayCart()
+        }
+
+        // dynamically creates an ul in document body w each li item
+        // corresponding to an item in availableItems array
+        function createStore() {
+          headingAvailProds = document.createElement('h2')
+          headingAvailProds.textContent = 'Available products:'
+          document.body.appendChild(h2)
+
+          let ul = document.createElement('ul') // create ul element
+          document.body.append(ul) // append ul to body
+          availableItems.forEach(function (item) {
+            // loop through availableItems
+            const li = document.createElement('li') // create li element
+            li.textContent = item // text displayed for each li will be the name of item from avalableItems array
+            li.addEventListener('click', function () {
+              addItemToCart(item)
+            })
+            ul.appendChild(li) // append li to end of ul (move specified node (li) to end parent node (ul))
+          })
+        }
+
+        function displayCart() {
+          const yourCart = document.createElement('h2')
+          const cartItems = Object.keys(sessionStorage) // get all keys from local storage
+
+          yourCart.textContent = 'Your cart'
+          document.body.appendChild(yourCart)
+
+          // check if any items in cart
+          if (cartItems.length > 0) {
+            const cartMessage = document.createElement('p') // create p element
+            // set text content of p element to display message w num of items in cart
+            cartMessage.textContent = `You previously had ${cartItems.length} in your cart`
+            document.body.appendChild(cartMessage) // append p element to body
+          }
+          updateCartItems()
         }
 
         function updateCartItems() {}
