@@ -78,7 +78,7 @@
         }
 
         function clearCart() {
-          sessionStorage.clear()
+          sessionStorage.setItem('cart', JSON.stringify(cart))
           displayCart()
         }
 
