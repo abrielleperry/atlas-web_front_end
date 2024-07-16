@@ -52,9 +52,9 @@
         // dynamically creates an ul in document body w each li item
         // corresponding to an item in availableItems array
         function createStore() {
-          headingAvailProds = document.createElement('h2')
-          headingAvailProds.textContent = 'Available products:'
-          document.body.appendChild(headingAvailProds)
+          headerAvailProds = document.createElement('h2')
+          headerAvailProds.textContent = 'Available products:'
+          document.body.appendChild(headerAvailProds)
 
           let ul = document.createElement('ul') // create ul element
           document.body.append(ul) // append ul to body
@@ -70,9 +70,10 @@
         }
 
         function displayCart() {
-          const yourCart = document.createElement('h2')
           const cartItems = Object.keys(sessionStorage) // get all keys from local storage
 
+          // h2 : 'Your cart'
+          const yourCart = document.createElement('h2')
           yourCart.textContent = 'Your cart'
           document.body.appendChild(yourCart)
 
