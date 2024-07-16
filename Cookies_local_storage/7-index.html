@@ -70,24 +70,18 @@
         }
 
         function displayCart() {
-          const cartItems = Object.keys(sessionStorage) // get all keys from local storage
-
           // h2 : 'Your cart'
           const yourCart = document.createElement('h2')
           yourCart.textContent = 'Your cart'
           document.body.appendChild(yourCart)
 
-          // check if any items in cart
-          if (cartItems.length > 0) {
-            const cartMessage = document.createElement('p') // create p element
-            // set text content of p element to display message w num of items in cart
-            cartMessage.textContent = `You previously had ${cartItems.length} in your cart`
-            document.body.appendChild(cartMessage) // append p element to body
-          }
-          updateCartItems()
+          const emptyDiv = document.createElement('div')
+          document.body.appendChild(emptyDiv)
+
+          updateCart()
         }
 
-        function updateCartItems() {}
+        function updateCart() {}
 
         createStore()
         displayCart()
