@@ -15,6 +15,7 @@
           'Sorry, your browser does not support Web storage. Try again with a better one'
         )
       } else {
+        createStore()
         displayCart()
       }
 
@@ -38,7 +39,7 @@
           displayCart()
         }
 
-        function removeItemfromCart(item) {
+        function removeItemFromCart(item) {
           delete cart[item]
           sessionStorage.setItem('cart'.JSON.stringify(cart))
           displayCart()
@@ -60,7 +61,7 @@
           document.body.append(ul) // append ul to body
           availableItems.forEach(function (item) {
             // loop through availableItems
-            let li = document.createElement('li') // create li element
+            const li = document.createElement('li') // create li element
             li.textContent = item // text displayed for each li will be the name of item from avalableItems array
             li.addEventListener('click', function () {
               addItemToCart(item)
@@ -71,9 +72,9 @@
 
         function displayCart() {
           // h2 : 'Your cart'
-          let yourCart = document.createElement('h2')
-          yourCart.textContent = 'Your cart'
-          document.body.appendChild(yourCart)
+          let headerYourCart = document.createElement('h2')
+          headerYourCart.textContent = 'Your cart'
+          document.body.appendChild(HeaderYourCart)
 
           let divCart = document.createElement('div')
           document.body.appendChild(divCart)
@@ -84,16 +85,29 @@
         function updateCart() {
           divCart.innerHTML = ''
 
-          const ul = document.createElement('ul')
+          let ul = document.createElement('ul')
 
-          const clearMyCart = document.createElement('li')
+          let clearMyCart = document.createElement('li')
           clearMyCart.textContent = 'Clear my cart'
           clearMyCart.addEventListener('click', clearCart)
           ul.appendChild(clearMyCart)
-        }
 
-        createStore()
-        displayCart()
+          if (Object.keys(getCartFromStorage).length > 0) {
+            Object.values(getCartFromStorage).forEach(function (value, index) {
+              let li = document.createElement('li')
+              li.textContent = `${availableItems[index]} x ${value}`
+              li.addEventListener('click', function () {
+                removeItemFromCart(availableItems[index])
+              })
+              ul.appendChild(li)
+            })
+          } else {
+            const emptyCartMessage = document.createElement('li')
+            emprtyCartMessage.textContent = 'Your cart is empty'
+            ul.appendChild(emptyCartMessage)
+          }
+        }
+        divCart.appendChild(ul)
       }
       createStore()
       displayCart()
