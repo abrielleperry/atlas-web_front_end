@@ -8,17 +8,15 @@
   <body>
     <script>
       let availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water']
-      let cart = {}
-
-      if (typeof sessionStorage === 'undefined') {
-        alert(
-          'Sorry, your browser does not support Web storage. Try again with a better one'
-        )
-      } else {
-        displayCart()
-      }
+      let cart = getCartFromStorage()
 
       function getCartFromStorage() {
+        if (typeof sessionStorage === 'undefined') {
+          alert(
+            'Sorry, your browser does not support Web storage. Try again with a better one'
+          )
+          return {}
+        }
         let cartString = sessionStorage.getItem('cart')
         if (cartString) {
           return JSON.parse(cartString)
@@ -77,12 +75,15 @@
         document.body.appendChild(headerYourCart)
 
         let divCart = document.createElement('div')
+        divCart.id = 'cartDiv'
         document.body.appendChild(divCart)
 
         updateCart()
       }
 
       function updateCart() {
+        let divCart = document.getElementById('cartDiv')
+        divCart.innerHTML = ''
         let ul = document.createElement('ul')
 
         let clearMyCart = document.createElement('li')
@@ -104,8 +105,8 @@
           emptyCartMessage.textContent = 'Your cart is empty'
           ul.appendChild(emptyCartMessage)
         }
+        divCart.appendChild(ul)
       }
-      divCart.appendChild(ul)
 
       createStore()
       displayCart()
