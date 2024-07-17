@@ -90,7 +90,7 @@
         clearMyCart.addEventListener('click', clearCart)
         ul.appendChild(clearMyCart)
 
-        let getCartFromStorage = getCartFromStorage()
+        let cartFromStorage = getCartFromStorage()
 
         if (Object.keys(getCartFromStorage).length > 0) {
           Object.values(getCartFromStorage).forEach(function (value, index) {
@@ -103,7 +103,7 @@
           })
         } else {
           let emptyCartMessage = document.createElement('li')
-          emprtyCartMessage.textContent = 'Your cart is empty'
+          emptyCartMessage.textContent = 'Your cart is empty'
           ul.appendChild(emptyCartMessage)
         }
       }
