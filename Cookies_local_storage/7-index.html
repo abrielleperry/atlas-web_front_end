@@ -21,7 +21,7 @@
       function getCartFromStorage() {
         let cartString = sessionStorage.getItem('cart')
         if (cartString) {
-          JSON.parse(cartString)
+          return JSON.parse(cartString)
         } else {
           return {}
         }
