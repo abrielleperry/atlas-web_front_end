@@ -15,7 +15,6 @@
           'Sorry, your browser does not support Web storage. Try again with a better one'
         )
       } else {
-        createStore()
         displayCart()
       }
 
@@ -26,89 +25,90 @@
         } else {
           return {}
         }
-
-        // add key to local storage w val of true
-        // local storage only supports string values
-        function addItemToCart(item) {
-          if (!cart[item]) {
-            cart[item] = 1
-          } else {
-            cart[item]++
-          }
-          sessionStorage.setItem('cart', JSON.stringify(cart))
-          displayCart()
-        }
-
-        function removeItemFromCart(item) {
-          delete cart[item]
-          sessionStorage.setItem('cart'.JSON.stringify(cart))
-          displayCart()
-        }
-
-        function clearCart() {
-          sessionStorage.setItem('cart', JSON.stringify(cart))
-          displayCart()
-        }
-
-        // dynamically creates an ul in document body w each li item
-        // corresponding to an item in availableItems array
-        function createStore() {
-          headerAvailProds = document.createElement('h2')
-          headerAvailProds.textContent = 'Available products:'
-          document.body.appendChild(headerAvailProds)
-
-          const ul = document.createElement('ul') // create ul element
-          document.body.append(ul) // append ul to body
-          availableItems.forEach(function (item) {
-            // loop through availableItems
-            const li = document.createElement('li') // create li element
-            li.textContent = item // text displayed for each li will be the name of item from avalableItems array
-            li.addEventListener('click', function () {
-              addItemToCart(item)
-            })
-            ul.appendChild(li) // append li to end of ul (move specified node (li) to end parent node (ul))
-          })
-        }
-
-        function displayCart() {
-          // h2 : 'Your cart'
-          let headerYourCart = document.createElement('h2')
-          headerYourCart.textContent = 'Your cart'
-          document.body.appendChild(HeaderYourCart)
-
-          let divCart = document.createElement('div')
-          document.body.appendChild(divCart)
-
-          updateCart()
-        }
-
-        function updateCart() {
-          divCart.innerHTML = ''
-
-          let ul = document.createElement('ul')
-
-          let clearMyCart = document.createElement('li')
-          clearMyCart.textContent = 'Clear my cart'
-          clearMyCart.addEventListener('click', clearCart)
-          ul.appendChild(clearMyCart)
-
-          if (Object.keys(getCartFromStorage).length > 0) {
-            Object.values(getCartFromStorage).forEach(function (value, index) {
-              let li = document.createElement('li')
-              li.textContent = `${availableItems[index]} x ${value}`
-              li.addEventListener('click', function () {
-                removeItemFromCart(availableItems[index])
-              })
-              ul.appendChild(li)
-            })
-          } else {
-            const emptyCartMessage = document.createElement('li')
-            emprtyCartMessage.textContent = 'Your cart is empty'
-            ul.appendChild(emptyCartMessage)
-          }
-        }
-        divCart.appendChild(ul)
       }
+
+      // add key to local storage w val of true
+      // local storage only supports string values
+      function addItemToCart(item) {
+        if (!cart[item]) {
+          cart[item] = 1
+        } else {
+          cart[item]++
+        }
+        sessionStorage.setItem('cart', JSON.stringify(cart))
+        displayCart()
+      }
+
+      function removeItemFromCart(item) {
+        delete cart[item]
+        sessionStorage.setItem('cart', JSON.stringify(cart))
+        displayCart()
+      }
+
+      function clearCart() {
+        cart = {}
+        sessionStorage.setItem('cart', JSON.stringify(cart))
+        displayCart()
+      }
+
+      // dynamically creates an ul in document body w each li item
+      // corresponding to an item in availableItems array
+      function createStore() {
+        let headerAvailProds = document.createElement('h2')
+        headerAvailProds.textContent = 'Available products:'
+        document.body.appendChild(headerAvailProds)
+
+        let ul = document.createElement('ul') // create ul element
+        document.body.append(ul) // append ul to body
+        availableItems.forEach(function (item) {
+          // loop through availableItems
+          let li = document.createElement('li') // create li element
+          li.textContent = item // text displayed for each li will be the name of item from avalableItems array
+          li.addEventListener('click', function () {
+            addItemToCart(item)
+          })
+          ul.appendChild(li) // append li to end of ul (move specified node (li) to end parent node (ul))
+        })
+      }
+
+      function displayCart() {
+        let headerYourCart = document.createElement('h2')
+        headerYourCart.textContent = 'Your cart'
+        document.body.appendChild(HeaderYourCart)
+
+        let divCart = document.createElement('div')
+        document.body.appendChild(divCart)
+
+        updateCart()
+      }
+
+      function updateCart() {
+        let ul = document.createElement('ul')
+
+        let clearMyCart = document.createElement('li')
+        clearMyCart.textContent = 'Clear my cart'
+        clearMyCart.addEventListener('click', clearCart)
+        ul.appendChild(clearMyCart)
+
+        let getCartFromStorage = getCartFromStorage()
+
+        if (Object.keys(getCartFromStorage).length > 0) {
+          Object.values(getCartFromStorage).forEach(function (value, index) {
+            let li = document.createElement('li')
+            li.textContent = `${availableItems[index]} x ${value}`
+            li.addEventListener('click', function () {
+              removeItemFromCart(availableItems[index])
+            })
+            ul.appendChild(li)
+          })
+        } else {
+          let emptyCartMessage = document.createElement('li')
+          emprtyCartMessage.textContent = 'Your cart is empty'
+          ul.appendChild(emptyCartMessage)
+        }
+      }
+      divCart.appendChild(ul)
+
       createStore()
       displayCart()
     </script>
