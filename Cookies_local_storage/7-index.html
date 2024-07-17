@@ -10,13 +10,16 @@
       let availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water']
       let cart = getCartFromStorage()
 
+      if (typeof sessionStorage === 'undefined') {
+        alert(
+          'Sorry, your browser does not support Web storage. Try again with a better one'
+        )
+      } else {
+        createStore()
+        displayCart()
+      }
+
       function getCartFromStorage() {
-        if (typeof sessionStorage === 'undefined') {
-          alert(
-            'Sorry, your browser does not support Web storage. Try again with a better one'
-          )
-          return {}
-        }
         let cartString = sessionStorage.getItem('cart')
         if (cartString) {
           return JSON.parse(cartString)
@@ -72,7 +75,10 @@
       function displayCart() {
         let headerYourCart = document.createElement('h2')
         headerYourCart.textContent = 'Your cart'
-        document.body.appendChild(headerYourCart)
+        if (!document.getElementById('cartHeader')) {
+          headerYourCart.id = 'cartHeader'
+          document.body.appendChild(headerYourCart)
+        }
 
         let divCart = document.createElement('div')
         divCart.id = 'cartDiv'
@@ -92,7 +98,7 @@
         ul.appendChild(clearMyCart)
 
         if (Object.keys(cart).length > 0) {
-          Object.values(cart).forEach(function (value, index) {
+          Object.keys(cart).forEach(function (item) {
             let li = document.createElement('li')
             li.textContent = `${item} x ${cart[item]}`
             li.addEventListener('click', function () {
