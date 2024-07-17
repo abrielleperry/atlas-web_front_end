@@ -19,9 +19,9 @@
       }
 
       function getCartFromStorage() {
-        let cart = sessionStorage.getItem('cart')
-        if (cart) {
-          JSON.parse(cart)
+        let cartString = sessionStorage.getItem()
+        if (cartString) {
+          JSON.parse(cartString)
         } else {
           return {}
         }
@@ -89,8 +89,6 @@
         clearMyCart.textContent = 'Clear my cart'
         clearMyCart.addEventListener('click', clearCart)
         ul.appendChild(clearMyCart)
-
-        let cartFromStorage = getCartFromStorage()
 
         if (Object.keys(getCartFromStorage).length > 0) {
           Object.values(getCartFromStorage).forEach(function (value, index) {
