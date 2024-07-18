@@ -76,12 +76,16 @@
       function displayCart() {
         let headerYourCart = document.createElement('h2')
         headerYourCart.textContent = 'Your cart'
+        // check if id exists if not create and if so update it
+        // ensures another header is not displayed
         if (!document.getElementById('cartHeader')) {
           headerYourCart.id = 'cartHeader'
           document.body.appendChild(headerYourCart)
         }
 
         let divCart = document.getElementById('cartDiv')
+        // if div does not exist create and assign cartDiv as id
+        // if id does exist innerhtml is cleared and updated
         if (!divCart) {
           divCart = document.createElement('div')
           divCart.id = 'cartDiv'
