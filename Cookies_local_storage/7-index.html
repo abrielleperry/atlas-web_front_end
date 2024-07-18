@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Task 7</title>
   </head>
   <body>
     <script>
@@ -32,12 +32,13 @@
       // local storage only supports string values
       function addItemToCart(item) {
         if (!cart[item]) {
-          cart[item] = 1
+          // is item in cart
+          cart[item] = 1 // if not add w qaunt of 1
         } else {
-          cart[item]++
+          cart[item]++ // if item is increment qaunt by 1
         }
-        sessionStorage.setItem('cart', JSON.stringify(cart))
-        displayCart()
+        sessionStorage.setItem('cart', JSON.stringify(cart)) // change cart obj to str and save in ss
+        displayCart() // update display
       }
 
       function removeItemFromCart(item) {
@@ -80,7 +81,7 @@
           document.body.appendChild(headerYourCart)
         }
 
-        let divCart = document.createElement('div')
+        let divCart = document.getElementById('cartDiv')
         if (!divCart) {
           divCart = document.createElement('div')
           divCart.id = 'cartDiv'
@@ -117,9 +118,6 @@
         }
         divCart.appendChild(ul)
       }
-
-      createStore()
-      displayCart()
     </script>
   </body>
 </html>
